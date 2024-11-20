@@ -24,17 +24,17 @@ float measure_distance() {
     esp_rom_delay_us(10);
     gpio_set_level(TRIG_PIN, 0);
 
-    // Medir la duración del pulso ECHO
+ // Medir la duración del pulso ECHO
     while (gpio_get_level(ECHO_PIN) == 0); // Esperar inicio del pulso
     int64_t start_time = esp_timer_get_time();
     while (gpio_get_level(ECHO_PIN) == 1); // Esperar fin del pulso
     int64_t end_time = esp_timer_get_time();
 
-    // Calcular distancia en cm
+// Calcular distancia en cm
     float duration = (end_time - start_time) / 1000.0; // en microsegundos
     float distance = (duration / 2.0) * 0.0343;        // velocidad del sonido
 
-    return distance;
+ return distance;
 }
 
 // Configuración inicial
@@ -47,7 +47,7 @@ void setup() {
     gpio_set_direction(MOTOR_LEFT, GPIO_MODE_OUTPUT);
     gpio_set_direction(MOTOR_RIGHT, GPIO_MODE_OUTPUT);
 
-    // Inicializar motores apagados
+// Inicializar motores apagados
     gpio_set_level(MOTOR_LEFT, 0);
     gpio_set_level(MOTOR_RIGHT, 0);
 }
@@ -58,7 +58,7 @@ void loop() {
         // Medir distancia del sensor ultrasónico
         float distance = measure_distance();
 
-        if (distance < OBSTACLE_DISTANCE_CM) {
+ if (distance < OBSTACLE_DISTANCE_CM) {
             // Obstáculo detectado, detener motores
             gpio_set_level(MOTOR_LEFT, 0);
             gpio_set_level(MOTOR_RIGHT, 0);
@@ -67,12 +67,12 @@ void loop() {
             int ir_left = gpio_get_level(SENSOR_IR_LEFT);
             int ir_right = gpio_get_level(SENSOR_IR_RIGHT);
 
-            // Controlar motores según los sensores IR
+ // Controlar motores según los sensores IR
             gpio_set_level(MOTOR_LEFT, ir_left);
             gpio_set_level(MOTOR_RIGHT, ir_right);
         }
 
-        // Pequeña demora para estabilidad
+// Pequeña demora para estabilidad
         vTaskDelay(pdMS_TO_TICKS(50));
     }
 }
