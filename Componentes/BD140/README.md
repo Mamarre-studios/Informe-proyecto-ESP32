@@ -1,4 +1,4 @@
-El BD140 es un transistor NPN de potencia, ideal para aplicaciones donde se requiere controlar corrientes más altas, como en motores o actuadores. En un seguidor de línea transistorizado, este transistor se usa principalmente para controlar la corriente que va al motor o a otros dispositivos de salida, actuando como interruptor en el circuito.
+El BD140 es un transistor PNP de potencia, ideal para aplicaciones donde se requiere controlar corrientes más altas, como en motores o actuadores. En un seguidor de línea transistorizado, este transistor se usa principalmente para controlar la corriente que va al motor o a otros dispositivos de salida, actuando como interruptor en el circuito.
 
 ![images](https://github.com/user-attachments/assets/33452550-d26a-427f-8a3c-34fcf6ec7a42)
 
