@@ -19,20 +19,19 @@
 
 // Función para medir la distancia del sensor ultrasónico
 float measure_distance() {
-    // Generar pulso de 10us en el pin TRIG
     gpio_set_level(TRIG_PIN, 1);
     esp_rom_delay_us(10);
     gpio_set_level(TRIG_PIN, 0);
 
  // Medir la duración del pulso ECHO
-    while (gpio_get_level(ECHO_PIN) == 0); // Esperar inicio del pulso
+    while (gpio_get_level(ECHO_PIN) == 0); 
     int64_t start_time = esp_timer_get_time();
-    while (gpio_get_level(ECHO_PIN) == 1); // Esperar fin del pulso
+    while (gpio_get_level(ECHO_PIN) == 1); 
     int64_t end_time = esp_timer_get_time();
 
 // Calcular distancia en cm
-    float duration = (end_time - start_time) / 1000.0; // en microsegundos
-    float distance = (duration / 2.0) * 0.0343;        // velocidad del sonido
+    float duration = (end_time - start_time) / 1000.0; 
+    float distance = (duration / 2.0) * 0.0343;        
 
  return distance;
 }
