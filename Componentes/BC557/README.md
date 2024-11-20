@@ -1,4 +1,5 @@
 El BC557 es un transistor PNP de señal pequeña, similar al BC547 pero con polaridad opuesta. En un seguidor de línea transistorizado, se usa para controlar la corriente en la dirección opuesta, generalmente para manejar circuitos en los que se requiere una conmutación en la rama negativa de la alimentación o para controlar otros componentes en la parte de control del motor.
+![bc557b-pnp1-c5a3883843a7fcdc5116620591724606-240-0](https://github.com/user-attachments/assets/01f08a38-f82d-41c4-a7c4-124abe907684)
 
 Funcionamiento:
 
